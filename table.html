@@ -22,79 +22,109 @@
     <summary>График</summary>
     <p><strong>Значение по оси ОX</strong></p>
     <p>
-      <label><input type="radio" name="ox" value="object_type"> Тип объекта</label><br>
-      <label><input type="radio" name="ox" value="central_body"> Центральное тело</label><br>
-      <label><input type="radio" name="ox" value="discovery_year"> Год открытия</label>
+      <input type="radio" id="ox_object_type" name="ox" value="object_type">
+      <label for="ox_object_type">Тип объекта</label><br>
+      <input type="radio" id="ox_central_body" name="ox" value="central_body">
+      <label for="ox_central_body">Центральное тело</label><br>
+      <input type="radio" id="ox_discovery_year" name="ox" value="discovery_year">
+      <label for="ox_discovery_year">Год открытия</label>
     </p>
 
     <p><strong>Значение по оси ОY</strong></p>
     <p>
-      <label><input type="checkbox" name="oy" value="max_diam"> Максимальный диаметр</label><br>
-      <label><input type="checkbox" name="oy" value="min_diam"> Минимальный диаметр</label><br>
-      <label><input type="checkbox" name="oy" value="cosmic_count"> Количество космических тел</label>
+      <input type="checkbox" id="oy_max_diam" name="oy" value="max_diam">
+      <label for="oy_max_diam">Максимальный диаметр</label><br>
+      <input type="checkbox" id="oy_min_diam" name="oy" value="min_diam">
+      <label for="oy_min_diam">Минимальный диаметр</label><br>
+      <input type="checkbox" id="oy_avg_diam" name="oy" value="avg_diam">
+      <label for="oy_avg_diam">Средний диаметр</label>
     </p>
 
-    <p><button type="button">Построить</button></p>
+    <p><button type="button" id="btn_build_graph">Построить</button></p>
     <p>Здесь будет график</p>
   </details>
 
   <details open>
     <summary>Фильтр</summary>
-    <p><label>Название: <input type="text" name="name"></label></p>
-    <p><label>Тип объекта: <input type="text" name="object_type_filter"></label></p>
-    <p><label>Центральное тело: <input type="text" name="central_body_filter"></label></p>
-    <p><label>Первооткрыватель: <input type="text" name="discoverer"></label></p>
-    <p>Год открытия: от <input type="text" name="year_from"> до <input type="text" name="year_to"></p>
-    <p>Диаметр: от <input type="text" name="diameter_from"> до <input type="text" name="diameter_to"></p>
-    <p><button type="button">Найти</button></p>
+    <p>
+      <label for="filter_name">Название:</label>
+      <input type="text" id="filter_name" name="name">
+    </p>
+    <p>
+      <label for="filter_object_type">Тип объекта:</label>
+      <input type="text" id="filter_object_type" name="object_type_filter">
+    </p>
+    <p>
+      <label for="filter_central_body">Центральное тело:</label>
+      <input type="text" id="filter_central_body" name="central_body_filter">
+    </p>
+    <p>
+      <label for="filter_discoverer">Первооткрыватель:</label>
+      <input type="text" id="filter_discoverer" name="discoverer">
+    </p>
+    <p>
+      Год открытия:
+      <label for="year_from">от</label>
+      <input type="number" id="year_from" name="year_from" min="1600" max="2026">
+      <label for="year_to">до</label>
+      <input type="number" id="year_to" name="year_to" min="1600" max="2026">
+    </p>
+    <p>
+      Диаметр:
+      <label for="diameter_from">от</label>
+      <input type="number" id="diameter_from" name="diameter_from" min="100" max="60000">
+      <label for="diameter_to">до</label>
+      <input type="number" id="diameter_to" name="diameter_to" min="100" max="60000">
+    </p>
+    <p><button type="button" id="btn_filter">Найти</button></p>
   </details>
 
   <details open>
     <summary>Сортировка</summary>
     <p>
-      <label>Первый уровень:
-        <select name="sortlevel_1">
-          <option value="none">Нет</option>
-          <option value="name">Название</option>
-          <option value="object_type">Тип объекта</option>
-          <option value="central_body">Центральное тело</option>
-          <option value="discoverer">Первооткрыватель</option>
-          <option value="discovery_year">Год открытия</option>
-          <option value="diameter">Диаметр</option>
-        </select>
-      </label>
-      <label><input type="checkbox" name="desclevel_1"> по убыванию?</label>
+      <label for="sortlevel_1">Первый уровень:</label>
+      <select id="sortlevel_1" name="sortlevel_1">
+        <option value="none">Нет</option>
+        <option value="name">Название</option>
+        <option value="object_type">Тип объекта</option>
+        <option value="central_body">Центральное тело</option>
+        <option value="discoverer">Первооткрыватель</option>
+        <option value="discovery_year">Год открытия</option>
+        <option value="diameter">Диаметр</option>
+      </select>
+      <input type="checkbox" id="desclevel_1" name="desclevel_1">
+      <label for="desclevel_1">по убыванию?</label>
     </p>
     <p>
-      <label>Второй уровень:
-        <select name="sortlevel_2">
-          <option value="none">Нет</option>
-          <option value="name">Название</option>
-          <option value="object_type">Тип объекта</option>
-          <option value="central_body">Центральное тело</option>
-          <option value="discoverer">Первооткрыватель</option>
-          <option value="discovery_year">Год открытия</option>
-          <option value="diameter">Диаметр</option>
-        </select>
-      </label>
-      <label><input type="checkbox" name="desclevel_2"> по убыванию?</label>
+      <label for="sortlevel_2">Второй уровень:</label>
+      <select id="sortlevel_2" name="sortlevel_2">
+        <option value="none">Нет</option>
+        <option value="name">Название</option>
+        <option value="object_type">Тип объекта</option>
+        <option value="central_body">Центральное тело</option>
+        <option value="discoverer">Первооткрыватель</option>
+        <option value="discovery_year">Год открытия</option>
+        <option value="diameter">Диаметр</option>
+      </select>
+      <input type="checkbox" id="desclevel_2" name="desclevel_2">
+      <label for="desclevel_2">по убыванию?</label>
     </p>
     <p>
-      <label>Третий уровень:
-        <select name="sortlevel_3">
-          <option value="none">Нет</option>
-          <option value="name">Название</option>
-          <option value="object_type">Тип объекта</option>
-          <option value="central_body">Центральное тело</option>
-          <option value="discoverer">Первооткрыватель</option>
-          <option value="discovery_year">Год открытия</option>
-          <option value="diameter">Диаметр</option>
-        </select>
-      </label>
-      <label><input type="checkbox" name="desclevel_3"> по убыванию?</label>
+      <label for="sortlevel_3">Третий уровень:</label>
+      <select id="sortlevel_3" name="sortlevel_3">
+        <option value="none">Нет</option>
+        <option value="name">Название</option>
+        <option value="object_type">Тип объекта</option>
+        <option value="central_body">Центральное тело</option>
+        <option value="discoverer">Первооткрыватель</option>
+        <option value="discovery_year">Год открытия</option>
+        <option value="diameter">Диаметр</option>
+      </select>
+      <input type="checkbox" id="desclevel_3" name="desclevel_3">
+      <label for="desclevel_3">по убыванию?</label>
     </p>
 
-    <p><button type="button">Сортировать</button></p>
+    <p><button type="button" id="btn_sort">Сортировать</button></p>
   </details>
 
   <table id="cosmic-table" border="1" cellpadding="5" cellspacing="0">
