@@ -63,3 +63,46 @@ body {
   width: 100%;
   height: 80px;
 }
+
+.sidebar {
+  float: left;
+  width: 28%;
+}
+
+.main-column {
+  float: right;
+  width: 70%;
+}
+
+.card {
+  height: 95px;
+  margin-bottom: 15px;
+}
+
+.card-half {
+  float: left;
+  width: 48%;
+  margin: 1%;
+}
+
+.card-title {
+  font-size: 14px;
+}
+
+.card-text {
+  font-size: 11px;
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: #1976d2;
+  color: #ffffff;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.card-img {
+  width: 100%;
+  height: 90px;
+}
