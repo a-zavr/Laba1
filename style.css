@@ -24,3 +24,42 @@ body {
   background-color: #1565c0;
   color: #ffffff;
 }
+
+.gallery {
+  height: 240px;
+  margin-bottom: 25px; 
+}
+
+.gallery-left {
+  float: left;
+  width: 66.666%;
+  height: 100%;
+}
+
+.gallery-right {
+  float: left;
+  width: 33.334%;
+  height: 100%;
+}
+
+.gallery-top-img {
+  display: block;
+  width: 100%;
+  height: 160px;
+}
+
+.gallery-row {
+  height: 80px;
+}
+
+.gallery-half {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.gallery-side-img {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
